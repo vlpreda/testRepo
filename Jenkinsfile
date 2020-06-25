@@ -42,11 +42,11 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
+      archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
     }
 
     failure {
-      mail(to: 'ci-team@example.com', subject: "Failed Pipeline ${currentBuild.fullDisplayName}", body: " For details about the failure, see ${env.BUILD_URL}")
+      mail(to: 'vlad2985@gmail.com', subject: "Failed Pipeline ${currentBuild.fullDisplayName}", body: " For details about the failure, see ${env.BUILD_URL}")
     }
 
   }
